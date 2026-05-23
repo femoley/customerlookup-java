@@ -92,7 +92,7 @@ Request Body:
 ## Update application.properties:
 
 ```text
-spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=LegacyCustomerLookupDb;encrypt=true;trustServerCertificate=true
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=<LocalDb>;encrypt=true;trustServerCertificate=true
 spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
 
