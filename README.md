@@ -42,14 +42,13 @@ http://localhost:8080/swagger-ui.html
 API Endpoints
 
 ```text
-Method	Endpoint	                                Description
-GET	/api/customers	                                Get all customers
-GET	/api/customers?searchTerm=1	                Get customer by ID
-GET	/api/customers?searchTerm=jane.doe@email.com    Get customer by email address
-GET	/api/customers?searchTerm=100001                Get customer by account number
-GET	/api/customers?searchTerm=john	                Get customers by first or last name
-PUT	/api/customers/{id}/email	                Update customer email address
-PUT	/api/customers/emails	                        Update multiple customer email addresses
+Method	Endpoint	                                      Description
+GET	/api/customers	                                      Get all customers
+GET	/api/customers?searchTerm=	                      Get customer with first name, last name, email address, id or account number
+GET	/api/customers/api/customers/{id}                     Get cusomter with Id
+GET	/api/customers/api/customers/account/{accountNumber}  Get cusomter with account number
+PUT	/api/customers/{id}/email	                      Update customer email address
+PUT	/api/customers/emails	                              Update multiple customer email addresses
 ```
 ---
 
@@ -137,17 +136,25 @@ Sample Response
 
 ![Get All Customers](docs/images/get-all-customers-postman.png)
 
-### Search Customers
+### Search Customer with the customer's name
 
 ![Search Customers](docs/images/search-customers-postman.png)
 
-### Update Customer Email
+### Search Customer with the id
+
+![Search Customers](docs/images/get-customer-with-id-postman)
+
+### Search Customer with the account number
+
+![Search Customers](docs/images/get-customer-with-acct#-postman)
+
+### Update Customer Email addrress
 
 ![Update Customer Email](docs/images/update-email-postman.png)
 
-### Update Muitlple Customer Emails
+### Update Muitlple Customer Email addresses
 
-![Update Customer Email](docs/images/update-emails-postman.png)
+![Update Email addresses](docs/images/update-emails-postman.png)
 
 
 ## SQL Server Result After Update

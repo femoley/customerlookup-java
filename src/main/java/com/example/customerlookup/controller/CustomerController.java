@@ -24,15 +24,27 @@ public class CustomerController {
     @GetMapping
     @Operation(
             summary = "Search customers",
-            description = "Search customers by Id, First Name, Last Name, Email, or Account Number"
+            description = "Search customers by Id, First Name, Last Name, Email, or Account Number. If searchTerm is omitted, all customers are returned."
     )
     public List<Customer> searchCustomers(
             @Parameter(
-                    description = "Search term value. Can be Id, First Name, Last Name, Email, or Account Number",
-                    example = "John"
+                    description = "Optional search value. Can be Id, First Name, Last Name, Email, or Account Number.",
+                    example = "100001"
             )
             @RequestParam(required = false) String searchTerm) {
         return customerService.searchCustomers(searchTerm);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable Integer id) {
+        Customer customer = customerService.getCustomerById(id);
+        return ResponseEntity.ok(customer);
+    }
+
+    @GetMapping("/account/{accountNumber}")
+    public ResponseEntity<Customer> getCustomerByAccountNumber(@PathVariable String accountNumber) {
+        Customer customer = customerService.getCustomerByAccountNumber(accountNumber);
+        return ResponseEntity.ok(customer);
     }
 
     @PutMapping("/{id}/email")

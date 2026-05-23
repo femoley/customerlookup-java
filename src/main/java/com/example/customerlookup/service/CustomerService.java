@@ -32,6 +32,16 @@ public class CustomerService {
                 );
     }
 
+    public Customer getCustomerById(Integer id) {
+        return customerRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Customer was not found."));
+    }
+
+    public Customer getCustomerByAccountNumber(String accountNumber) {
+        return customerRepository.findByAccountNumber(accountNumber)
+                .orElseThrow(() -> new IllegalArgumentException("Customer was not found."));
+    }
+
     public Customer updateEmail(Integer customerId, String newEmail) {
         String cleanedEmail = newEmail.trim();
 
