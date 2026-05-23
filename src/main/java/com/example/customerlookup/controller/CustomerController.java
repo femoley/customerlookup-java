@@ -6,6 +6,8 @@ import com.example.customerlookup.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 
 import java.util.List;
 
@@ -20,7 +22,16 @@ public class CustomerController {
     }
 
     @GetMapping
-    public List<Customer> searchCustomers(@RequestParam(required = false) String searchTerm) {
+    @Operation(
+            summary = "Search customers",
+            description = "Search customers by Id, First Name, Last Name, Email, or Account Number"
+    )
+    public List<Customer> searchCustomers(
+            @Parameter(
+                    description = "Search term value. Can be Id, First Name, Last Name, Email, or Account Number",
+                    example = "John"
+            )
+            @RequestParam(required = false) String searchTerm) {
         return customerService.searchCustomers(searchTerm);
     }
 
