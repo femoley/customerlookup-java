@@ -28,6 +28,7 @@ CustomerService
 CustomerRepository
         ↓
 SQL Server
+```
 
 ---
 
@@ -48,9 +49,6 @@ GET	/api/customers/{id}	Get customer by ID
 GET	/api/customers/account/{accountNumber}	Get customer by account number
 PUT	/api/customers/{id}/email	Update customer email
 ```
-
----
-
 ---
 
 # API Endpoints
@@ -131,7 +129,7 @@ Sample Response
 
 ---
 
-## API Test Screenshots
+## API Postman Test Screenshots
 
 ### Get All Customers
 
@@ -149,11 +147,13 @@ Sample Response
 
 ![Update Customer Email](docs/images/update-emails-postman.png)
 
-### SQL Server Result After Update
 
+## SQL Server Result After Update
 ![SQL Server After Update](docs/images/sql-server-after-update.png)
 
 
+# Swagger UI
+![Swagger/OpenAPI](docs/images/OpenAPI-swagger.png)
 
 
 
