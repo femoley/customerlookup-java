@@ -1,34 +1,55 @@
-# Customer Lookup API
+# Customer Lookup Java API
 
-A Spring Boot REST API for customer lookup and email maintenance using Java 17 and SQL Server.
+A Java 17 Spring Boot REST API that demonstrates enterprise-style customer lookup, SQL Server integration, layered backend architecture, and customer email maintenance.
 
-## Technologies Used
+## Features
 
-- Java 17
-- Spring Boot 3
-- Spring Data JPA
-- Hibernate
-- SQL Server
-- Maven
-- IntelliJ IDEA
+- Retrieve all customers
+- Search customers by name, email, or account number
+- Retrieve customer by ID
+- Retrieve customer by account number
+- Update customer email address
+- Validate email format
+- Prevent duplicate email addresses
+- SQL Server persistence
+- JPA/Hibernate ORM
+- Swagger/OpenAPI documentation
+- Postman-tested REST endpoints
+
+## Architecture
+
+```text
+Client / Postman / Swagger UI
+        ↓
+CustomerController
+        ↓
+CustomerService
+        ↓
+CustomerRepository
+        ↓
+SQL Server
 
 ---
 
-# Project Architecture
+## API Documentation
+
+After running the application, open:
 
 ```text
-Controller → Service → Repository → SQL Server
+http://localhost:8080/swagger-ui.html
+```
+API Endpoints
+
+```text
+Method	Endpoint	Description
+GET	/api/customers	Get all customers
+GET	/api/customers?searchTerm=john	Search customers
+GET	/api/customers/{id}	Get customer by ID
+GET	/api/customers/account/{accountNumber}	Get customer by account number
+PUT	/api/customers/{id}/email	Update customer email
 ```
 
-## Features
-- Retrieve all customers
-- Search customers
-- Update customer email
-- SQL Server integration
-- REST API endpoints
-- JPA/Hibernate entity mapping
-- API Endpoints
-- Get All Customers
+---
 
 # API Endpoints
 ## Get All Customers
@@ -104,6 +125,30 @@ Sample Response
   }
 ]
 ```
+
+---
+
+## API Test Screenshots
+
+### Get All Customers
+
+![Get All Customers](docs/images/get-all-customers-postman.png)
+
+### Search Customers
+
+![Search Customers](docs/images/search-customers-postman.png)
+
+### Update Customer Email
+
+![Update Customer Email](docs/images/update-email-postman.png)
+
+### Update Muitlple Customer Emails
+
+![Update Customer Email](docs/images/update-emails-postman.png)
+
+### SQL Server Result After Update
+
+![SQL Server After Update](docs/images/sql-server-after-update.png)
 
 
 
