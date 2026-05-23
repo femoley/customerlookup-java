@@ -30,6 +30,8 @@ Controller → Service → Repository → SQL Server
 - API Endpoints
 - Get All Customers
 
+---
+
 # API Endpoints
 ## Get All Customers
 
@@ -63,6 +65,7 @@ Request Body:
   "email": "john.updated@email.com"
 }
 ```
+---
 
 # SQL Server Configuration
 
@@ -76,7 +79,7 @@ spring.datasource.password=YOUR_PASSWORD
 spring.jpa.hibernate.ddl-auto=validate
 spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 ```
-
+---
 # Run the Application
 ## Maven
 
