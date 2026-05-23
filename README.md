@@ -42,12 +42,14 @@ http://localhost:8080/swagger-ui.html
 API Endpoints
 
 ```text
-Method	Endpoint	Description
-GET	/api/customers	Get all customers
-GET	/api/customers?searchTerm=john	Search customers
-GET	/api/customers/{id}	Get customer by ID
-GET	/api/customers/account/{accountNumber}	Get customer by account number
-PUT	/api/customers/{id}/email	Update customer email
+Method	Endpoint	                                Description
+GET	/api/customers	                                Get all customers
+GET	/api/customers?searchTerm=1	                Get customer by ID
+GET	/api/customers?searchTerm=jane.doe@email.com    Get customer by email address
+GET	/api/customers?searchTerm=100001                Get customer by account number
+GET	/api/customers?searchTerm=john	                Get customers by first or last name
+PUT	/api/customers/{id}/email	                Update customer email address
+PUT	/api/customers/emails	                        Update multiple customer email addresses
 ```
 ---
 
