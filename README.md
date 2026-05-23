@@ -42,13 +42,13 @@ http://localhost:8080/swagger-ui.html
 API Endpoints
 
 ```text
-Method	Endpoint	                                      Description
-GET	/api/customers	                                      Get all customers
-GET	/api/customers?searchTerm=	                      Get customer with first name, last name, email address, id or account number
-GET	/api/customers/api/customers/{id}                     Get cusomter with Id
-GET	/api/customers/api/customers/account/{accountNumber}  Get cusomter with account number
-PUT	/api/customers/{id}/email	                      Update customer email address
-PUT	/api/customers/emails	                              Update multiple customer email addresses
+Method	Endpoint	                                              Description
+GET	/api/customers	                                              Get all customers
+GET	/api/customers?searchTerm        	                          Get customer with name, email address, id or account number
+GET	/api/customers/api/customers/{id}                             Get customer with Id
+GET	/api/customers/api/customers/account/{accountNumber}          Get customer with account number
+PUT	/api/customers/{id}/email	                                  Update customer email address
+PUT	/api/customers/emails	                                      Update multiple customer email addresses
 ```
 ---
 
@@ -142,11 +142,11 @@ Sample Response
 
 ### Search Customer with the id
 
-![Search Customers](docs/images/get-customer-with-id-postman)
+![Search Customers with id](docs/images/get-customer-with-id-postman.png)
 
 ### Search Customer with the account number
 
-![Search Customers](docs/images/get-customer-with-acct#-postman)
+![Search Customers with account number](docs/images/get-customer-with-acct-postman.png)
 
 ### Update Customer Email addrress
 
